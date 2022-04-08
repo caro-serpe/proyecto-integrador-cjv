@@ -1,3 +1,11 @@
-body{
-    color : red;
+header a{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+
+}
+
+header h1{
+    font-size: larger;
+    font-weight: bolder;
 }
