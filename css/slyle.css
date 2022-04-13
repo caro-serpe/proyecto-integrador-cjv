@@ -10,4 +10,15 @@ header h1{
     font-size: larger;
     font-weight: bolder;
 }
-
+.aCancion{
+    text-decoration: none;
+    color: black;
+}
+.aDiscos{
+    text-decoration: none;
+    color: black;
+}
+.aCantantes{
+    text-decoration: none;
+    color: black;
+}
