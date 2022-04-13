@@ -1,0 +1,44 @@
+body{
+    background-color: rgb(223, 174, 238);
+
+}
+.navegador a{
+    padding-bottom: 10px;
+     text-decoration: none;
+     color: white;
+     height: 50px;
+     width: 120px;
+     background-color: pink;
+     text-align: center;
+     border-radius: 5px;
+
+ }
+ .navegador {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+header h2{
+    font-size: larger;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.buscador {
+    padding-top: 10px;
+}
+.aCancion{
+    text-decoration: none;
+    color: black;
+}
+.aDiscos{
+    text-decoration: none;
+    color: black;
+}
+.aCantantes{
+    text-decoration: none;
+    color: black;
+}
