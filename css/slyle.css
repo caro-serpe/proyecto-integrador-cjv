@@ -1,4 +1,3 @@
-
 header a{
     text-decoration: none;
     color: black;
@@ -9,5 +8,17 @@ header a{
 header h2{
     font-size: larger;
     font-weight: bolder;
+    text-decoration: none;
 }
-
+.aCancion{
+    text-decoration: none;
+    color: black;
+}
+.aDiscos{
+    text-decoration: none;
+    color: black;
+}
+.aCantantes{
+    text-decoration: none;
+    color: black;
+}
