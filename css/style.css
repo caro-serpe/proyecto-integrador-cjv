@@ -42,3 +42,38 @@ header h2{
     text-decoration: none;
     color: black;
 }
+
+.detailartist {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.artist {
+    box-sizing: border-box;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    width: 30%;
+}
+
+section {
+    margin-top: 30px;
+}
+
+img {
+    width: 280px;
+    border-radius: 100px;
+}
+
+h1 {
+    font-family: 'Beau Rivage', cursive;
+}
+h3 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+li {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
