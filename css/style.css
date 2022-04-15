@@ -2,8 +2,9 @@ body{
     background-color: rgb(223, 174, 238);
 
 }
+
 .navegador li a{
-    padding-bottom: 10px;
+     padding-bottom: 10px;
      text-decoration: none;
      color: white;
      height: 50px;
@@ -14,9 +15,7 @@ body{
      display: flex;
      flex-wrap: wrap;
      flex-direction: row;
-     justify-content: space-between;
-     
-
+     justify-content: space-around;
  }
 
  .navegador ul{
@@ -24,15 +23,13 @@ body{
      display: flex;
      flex-wrap: wrap;
      flex-direction: row;
-     justify-content: space-around;
-
  }
+
  .navegador {
     text-align: center;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-
 }
 
 header h2{
@@ -44,14 +41,36 @@ header h2{
 .buscador {
     padding-top: 10px;
 }
+
+ul .canciones{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+ul .discos{ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+ul .cantantes{ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 .aCancion{
     text-decoration: none;
     color: black;
 }
+
 .aDiscos{
     text-decoration: none;
     color: black;
 }
+
 .aCantantes{
     text-decoration: none;
     color: black;
@@ -91,3 +110,8 @@ h3 {
 li {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+footer {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.19);
+}
+    
