@@ -195,8 +195,15 @@ article.cantantes li img{
     object-fit: cover;
 }
 
-article.canciones li{
+article.canciones > li{
     width: 250px;
     text-align: center;
     margin: 20px 0px;
+}
+
+article.canciones > li > img {
+    width: inherit;
+    height: 250px;
+    object-fit: cover;
+    margin-top: 10px;
 }
