@@ -207,3 +207,28 @@ article.canciones > li > img {
     object-fit: cover;
     margin-top: 10px;
 }
+
+section.tab-songs{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+article.songs{
+    width: 300px;
+    text-align: center;
+    margin-top: 10px;
+    justify-content: space-around;
+}
+
+article.songs img{
+    width: inherit;
+    height: 300px;
+    object-fit: cover;
+    margin-top: 10px;
+}
+
+article.songs > audio {
+    width: inherit;
+}
