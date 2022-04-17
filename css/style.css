@@ -43,6 +43,7 @@ header h2{
 }
 
 ul .canciones{
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -50,12 +51,14 @@ ul .canciones{
 }
 
 ul .discos{ 
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
 ul .cantantes{ 
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -106,6 +109,7 @@ h1 {
     background-color: rgba(137, 43, 226, 0.404);
     border-radius: 50px;
 }
+
 h3 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -117,8 +121,32 @@ h2 {
 li {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
 footer {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.19);
 }
 
+.discos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.disco{
+    width: 250px;
+    margin: 30px;
+}
+
+.disco-img{
+    width: inherit;
+}
+
+.genre{
+    height: 30px;
+}
+
+.tab{
+    margin-right: 15px;
+}
