@@ -3,7 +3,7 @@ body{
 
 }
 
-.navegador a{
+.navegador li a{
      padding-bottom: 10px;
      text-decoration: none;
      color: white;
@@ -12,13 +12,13 @@ body{
      background-color: pink;
      text-align: center;
      border-radius: 5px;
-     text-align: center;
      display: flex;
+     flex-wrap: wrap;
      flex-direction: row;
-     justify-content: center;
+     justify-content: space-around;
  }
 
- .navegaror ul {
+ .navegador ul{
      list-style: none;
      display: flex;
      flex-wrap: wrap;
@@ -79,7 +79,7 @@ ul .cantantes{
     color: black;
 }
 
-.artistgeneral {
+.detailartist {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -130,18 +130,11 @@ img {
 }
 
 h1 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 35px;
-    background-color: rgba(137, 43, 226, 0.404);
-    border-radius: 50px;
+    font-family: 'Beau Rivage', cursive;
 }
 
 h3 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-h2 {
-    font-family: 'Padauk', sans-serif;
 }
 
 li {
@@ -152,7 +145,6 @@ footer {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.19);
 }
-
 .discos{
     display: flex;
     flex-direction: row;
