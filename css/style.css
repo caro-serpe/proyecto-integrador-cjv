@@ -232,6 +232,3 @@ article.songs img{
 article.songs > audio {
     width: inherit;
 }
-.TituloPlaylist{
-    font-size: 30px;
-}
