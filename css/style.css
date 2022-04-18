@@ -145,6 +145,7 @@ footer {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.19);
 }
+
 .discos{
     display: flex;
     flex-direction: row;
@@ -231,4 +232,185 @@ article.songs img{
 
 article.songs > audio {
     width: inherit;
+}
+
+@media (max-width: 480px) {
+    article.canciones > li{
+        width: 150px;
+        text-align: center;
+        margin: 15px 0px;
+    }
+    
+    article.canciones > li > img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        margin-top: 3px;
+    }
+
+    .home-list-element{
+        width: 150px;
+        text-align: center;
+        margin: 15px 0px;
+    }
+    
+    .home-img{
+        width: 100px;
+        margin-top: 3px;
+        height: 100px;
+        object-fit: cover;
+    }
+    
+    
+    article.cantantes li{
+    width: 150px;
+    text-align: center;
+    margin: 15px 0px;
+    }
+
+    article.cantantes li img{
+    width: 100px;
+    margin-top: 10px;
+    height: 100px;
+    object-fit: cover;
+    }
+
+    .detailartist {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    article.artist img{
+        width: 100px;
+        height: 100px;
+        margin: 0px;
+        object-fit: cover;
+    }
+    
+    article.artist > li{
+        width: 100%;
+        text-align: center;
+        margin-top: 15px 0px;
+    }
+    
+    article.artist > h1{
+        text-align: center;
+    }
+    
+    article.artist > h3{
+        text-align: center;
+        height: 90px;
+        word-break: break-word;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    article.artist{
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center
+    }
+    
+    
+    .artist {
+        box-sizing: border-box;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        width: 100px;
+        margin: 10px 20px;
+    }
+
+    .discos{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .disco{
+        width: 130px;
+        margin: 20px;
+    }
+
+    .disco > ul {
+        padding-left: 15px;
+    }
+
+    .disco > li {
+        list-style-type: none;
+    }
+    
+    .disco-img{
+        width: 90px;
+        margin-top: 50px;
+    }
+    
+    .genre{
+        height: 20px;
+    }
+
+    section.tab-songs{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        text-align: center;
+    }
+    
+    article.songs{
+        width: 100px;
+        text-align: center;
+        margin: 10px 0px;
+        justify-content: space-around;
+    }
+    
+    article.songs img{
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        margin-top: 10px;
+    }
+    
+    article.songs > audio {
+        width: inherit;
+        align-items: center;
+        margin: 15px;
+    }
+
+    .navegador li a{
+        padding-bottom: 10px;
+        text-decoration: none;
+        color: white;
+        height: 25px;
+        width: 100px;
+        background-color: pink;
+        text-align: center;
+        border-radius: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .navegador li a h3{
+        font-size: 15px;
+    }
+   
+    .navegador ul{
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+
+
+
+
+    
+    
+    
+
 }
