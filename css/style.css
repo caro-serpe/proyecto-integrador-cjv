@@ -249,6 +249,10 @@ article.songs > audio {
     color: black;
 }
 
+.ListaGeneros{
+    list-style: none;
+}
+
 @media (max-width: 390px) {
     article.canciones > li{
         width: 150px;
