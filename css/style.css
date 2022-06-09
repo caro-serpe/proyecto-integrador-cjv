@@ -254,7 +254,7 @@ article.songs > audio {
 }
 
 .FotoLogo {
-    width: 150px;
+    width: 100px;
 }
 
 @media (max-width: 390px) {
