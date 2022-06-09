@@ -9,7 +9,7 @@ body{
      color: white;
      height: 50px;
      width: 120px;
-     background-color: pink;
+     background-color: rgb(247, 26, 92);
      text-align: center;
      border-radius: 5px;
      display: flex;
@@ -251,6 +251,10 @@ article.songs > audio {
 
 .ListaGeneros{
     list-style: none;
+}
+
+.FotoLogo {
+    width: 150px;
 }
 
 @media (max-width: 390px) {
