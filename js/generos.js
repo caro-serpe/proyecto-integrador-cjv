@@ -12,10 +12,10 @@ fetch(proxy+endpoint)
 
         let elementos = ''; 
 
-        for (let i=0; i <= info.length; i++) {
+        for (let i=0; i <=info.length; i++) {
              elementos += `<article>
-                            <img src= ${info[i].picture}>
-                            <p> ${info[i].name}</p>
+                            <img src= ${info[i].data.picture_medium}>
+                            <a href="./detalle-genero.html?id=${info[i].id}">${info[i].data.name}</a>
                             </article>`
         };
         lista.innerHTML = elementos;
