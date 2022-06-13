@@ -1,25 +1,23 @@
-let proxy ="https://api.allorigins.win/raw?url="
-let endpoint = "https://api.deezer.com/genre"
+let url = 'https://api.allorigins.win/raw?url=https://api.deezer.com/genre';
 
-fetch(proxy+endpoint)
+for (let i = 1; i < 11; i++){
+fetch(url)
     .then(function(response){
-        return response.json();
+    return response.json();
     })
-    .then(function(data){
-        console.log(data);
-        let info = data;
-        let lista = document.querySelector('.ListaGeneros');
-
-        let elementos = ''; 
-
-        for (let i=0; i <=info.length; i++) {
-             elementos += `<article>
-                            <img src= ${info[i].data.picture_medium}>
-                            <a href="./detalle-genero.html?id=${info[i].id}">${info[i].data.name}</a>
-                            </article>`
-        };
-        lista.innerHTML = elementos;
+    .then(function(datos){
+        console.log(datos)
+        let generos = datos.data[i];
+        let contenedor = document.querySelector('.ListaGeneros');
+        
+        contenedor.innerHTML += 
+        `<article class="articlecanc">\
+        <img src="${generos.picture_medium}" alt="" class="fotodiscos">
+        <h4>${generos.name}</h4>
+        <a href="./detalle-genero.html" class="verMas">Ver más</a>
+        </article>`
+        
     })
     .catch(function(error){
-        console.log("El error fue "+ error);
-    })
+        console.log("Error: " + error);
+    })}
