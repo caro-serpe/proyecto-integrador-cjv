@@ -7,6 +7,18 @@ fetch(proxy+endpoint)
     })
     .then(function(data){
         console.log(data);
+        let info = data;
+        let lista = document.querySelector('.ListaGeneros');
+
+        let elementos = ''; 
+
+        for (let i=0; i <= info.length; i++) {
+             elementos += `<article>
+                            <img src= ${info[i].picture}>
+                            <p> ${info[i].name}</p>
+                            </article>`
+        };
+        lista.innerHTML = elementos;
     })
     .catch(function(error){
         console.log("El error fue "+ error);
