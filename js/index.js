@@ -7,6 +7,7 @@ fetch(proxy+endpoint)
         return response.json();
     })
     .then(function(datos){
+        
         for(let i=0; i<=4; i++){
         console.log(datos);
         let canciones = datos.tracks.data;
@@ -15,10 +16,34 @@ fetch(proxy+endpoint)
         contenedor.innerHTML +=
         `<article> 
         <img src= "${canciones[i].album.cover}">
-        <a href="./detalle-canciones.html"> <h4>${canciones[i].title}</h4></a>
-        <p> ${canciones[i].artist.name} </p>
+        <a href="./detalle-canciones.html?id=${canciones[i].id}"> <h4>${canciones[i].title}</h4></a>
+        <a href= "./detail.artist.html?id=${canciones[i].artist.id}"> ${canciones[i].artist.name} </a>
         <p><a class="fav" href="">Agregar a Fav</a></p>
-        </article>`}
+        </article>`};
+
+        for(let i=0; i<=4; i++){
+            console.log(datos);
+            let discos = datos.albums.data; 
+            let contenedor= document.querySelector('.IndexDiscos');
+
+            contenedor.innerHTML += 
+            `<article> 
+            <img src= "${discos[i].cover}">
+            <a href= "./detalles-de-discos.html?id=${discos[i].id}"> <h4>${discos[i].title}</h4> </a>
+            </article>`
+        }
+
+        for(let i=0; i<=4; i++){
+            console.log(datos);
+            let cantantes = datos.artists.data;
+            let contenedor = document.querySelector('.IndexArtistas');
+
+            contenedor.innerHTML += 
+            `<article> 
+            <img src="${cantantes[i].picture_small}">
+            <a href="./detail.artist.html?id=${cantantes[i].id}"> <h4> ${cantantes[i].name}</a>
+            </article>`
+        }
 
     })
     .catch(function(error){
