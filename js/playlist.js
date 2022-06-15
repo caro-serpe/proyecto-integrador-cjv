@@ -22,7 +22,7 @@ else{
             console.log(data)
             cancionesFav += 
             `<article> 
-            <img src= ${data.cover_xl}>
+            <img src= ${data.album.cover_xl}>
             <p> Nombre: ${data.title} </p>
             <a href="./detalle-canciones.html?id=${data.id}"> Ir a detalle </a>
             </article>`
