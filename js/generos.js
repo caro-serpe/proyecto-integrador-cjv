@@ -11,7 +11,7 @@ fetch(url)
         let contenedor = document.querySelector('.ListaGeneros');
         
         contenedor.innerHTML += 
-        `<article class="articlecanc">\
+        `<article class="articlecanc">
         <img src="${generos[i].picture_medium}" alt="" class="fotodiscos">
         <h4>${generos[i].name}</h4>
         <a href="./detalle-genero.html?id=${generos[i].id}" class="verMas">Ver más</a>

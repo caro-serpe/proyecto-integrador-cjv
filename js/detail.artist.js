@@ -6,6 +6,7 @@ const url =`https://api.allorigins.win/raw?url=https://api.deezer.com/artist/${i
 
 const url2 = `https://api.allorigins.win/raw?url=https://api.deezer.com/artist/${id}/top?limit=5`
 
+
 fetch(url)
     .then(function(response){
         return response.json();
@@ -34,7 +35,7 @@ fetch(url2)
 
             let album = document.querySelector('.albumcantante');
 
-            album.innerHTML= `<li class="ListaGeneros">${canciones[i].title}</li>`
+            album.innerHTML= `<p>${canciones[i].title}</p>`
         }
         
     })
