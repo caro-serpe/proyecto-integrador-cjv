@@ -15,7 +15,7 @@ fetch(proxy+endpoint)
 
         contenedor.innerHTML +=
         `<article> 
-        <img src= "${canciones[i].album.cover}">
+        <img src= "${canciones[i].album.cover_xl}">
         <a href="./detalle-canciones.html?id=${canciones[i].id}"> <h4>${canciones[i].title}</h4></a>
         <a href= "./detail.artist.html?id=${canciones[i].artist.id}"> ${canciones[i].artist.name} </a>
         <p><a class="fav" href="">Agregar a Fav</a></p>
@@ -28,7 +28,7 @@ fetch(proxy+endpoint)
 
             contenedor.innerHTML += 
             `<article> 
-            <img src= "${discos[i].cover}">
+            <img src= "${discos[i].cover_xl}">
             <a href= "./detalles-de-discos.html?id=${discos[i].id}"> <h4>${discos[i].title}</h4> </a>
             </article>`
         }
@@ -40,7 +40,7 @@ fetch(proxy+endpoint)
 
             contenedor.innerHTML += 
             `<article> 
-            <img src="${cantantes[i].picture_small}">
+            <img src="${cantantes[i].picture_xl}">
             <a href="./detail.artist.html?id=${cantantes[i].id}"> <h4> ${cantantes[i].name}</a>
             </article>`
         }
