@@ -30,9 +30,10 @@
 
         <nav class="buscador">
 
-            <form action="./search-results.html" method="get">
-            <input type="search" name="busqueda" placeholder="Busqueda">
-            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <form class="form" action="./search-results.html" method="get">
+                <input class="busqueda" type="search" name="busqueda" placeholder="Busqueda"/>
+                <input class="endpoint" style="display:none;" name="endpoint" placeholder="Busqueda" value="/song"/>
+                <button class="submit-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
 
         </nav>
@@ -54,5 +55,6 @@
     </footer>
 
     <script type="text/javascript" src="./js/detalle-canciones.js"></script>
+    <script type="text/javascript" src="./js/validate-search.js"></script>
 </body>
 </html>
