@@ -3,55 +3,56 @@ let qsol = new URLSearchParams(qs);
 let id = qsol.get('id');
 
 const url =`https://api.allorigins.win/raw?url=https://api.deezer.com/track/${id}`
-
+let idAGuardar=id
 fetch(url)
     .then(function(response){
         return response.json();
     })
     .then(function(data){
-        console.log(data);
+        console.log(data.id);
         let titulo = document.querySelector('.tituloTema')
         let foto = document.querySelector('.tapaTema')
         let cantante = document.querySelector('.cantanteTema')
         let disco = document.querySelector('.discoTema')
         let favorit = document.querySelector('.Afav');
 
-        titulo.innerHTML = data.title;
+        titulo.innerText = data.title;
         foto.src = data.album.cover_xl;
-        cantante.innerHTML = data.artist.name;
-        disco.innerHTML = data.album.title;
-        favorit.innerHTML
+        cantante.innerText = data.artist.name;
+        disco.innerText = data.album.title;
+        favorit.innerText
+        idAGuardar=data.id
 
     })
     .catch(function(error){
         console.log('El error fue ' + error);
     })
-
+    console.log(idAGuardar)
     let favoritos = [];
     let recStorage = localStorage.getItem('favoritos');
 
     if(recStorage != null){
         favoritos =JSON.parse(recStorage);
     }
-    let fav = document.querySelector('.AFav');
+    let fav = document.querySelector('.Afav');
 
-    if(favoritos.includes(id)){
-        fav.innerText = "Quitar de favoritos"
+    if(favoritos.includes(idAGuardar)){
+             fav.innerText = "Quitar de favoritos"
     }
 
     fav.addEventListener('click', function (e){
         e.preventDefault()
-        if (favoritos.includes(id)){
-            let indice = favoritos.indexOf(id);
+        if (favoritos.includes(idAGuardar)){
+            let indice = favoritos.indexOf(idAGuardar);
             favoritos.splice(indice, 1);
             fav.innerText = "Agregar a favoritos";
         }
         else{
-            favoritos.push(id);
+            favoritos.push(idAGuardar);
             fav.innerText = "Quitar de favoritos";
         }
 
         let favJSON = JSON.stringify(favoritos);
-        localStorage.setItem('favoritos', favsJSON);
+        localStorage.setItem('favoritos', favJSON);
 
     })

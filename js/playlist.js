@@ -1,24 +1,25 @@
 let recStorage = localStorage.getItem('favoritos');
-let favoritosObj= JSON.parse(recStorage);
+let favoritos= JSON.parse(recStorage);
 
-console.log(favoritos);
+console.log(favoritos.length);
 
 let section = document.querySelector('.playlist');
 
 let cancionesFav = '';
 
 if(favoritos == null || favoritos.length == 0){
-    section.innerHTML = '<p> No hay favoritos actualmente </p>'
+    section.innerHTML = '<p> No agregaste nada a favoritos </p>'
 } 
 else{
-    for(let i=0; index < favoritos.length; i++){
+    for(let i=0; i < favoritos.length; i++){
         let URL = `https://api.allorigins.win/raw?url=https://api.deezer.com/track/${favoritos[i]}`;
 
         fetch(URL)
         .then(function(response){
-            return response.JSON;
+            return response.json();
         })
         .then(function(data){
+            console.log(data)
             cancionesFav += 
             `<article> 
             <img src= ${data.cover_xl}>
