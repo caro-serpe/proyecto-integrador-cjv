@@ -18,7 +18,6 @@ fetch(proxy+endpoint)
         <img src= "${canciones[i].album.cover_xl}">
         <a href="./detalle-canciones.html?id=${canciones[i].id}"> <h4>${canciones[i].title}</h4></a>
         <a href= "./detail.artist.html?id=${canciones[i].artist.id}"> ${canciones[i].artist.name} </a>
-        <p><a class="fav" href="">Agregar a Fav</a></p>
         </article>`};
 
         for(let i=0; i<=4; i++){
