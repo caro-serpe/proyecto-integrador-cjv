@@ -257,7 +257,11 @@ article.songs > audio {
     flex-wrap: wrap;
     justify-content: space-around;
 }
-
+.ListaGeneros{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 .playlist playlist-songs{
     width: 300px;
 }

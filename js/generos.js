@@ -1,6 +1,6 @@
 let url = 'https://api.allorigins.win/raw?url=https://api.deezer.com/genre';
 
-for (let i = 1; i < 11; i++){
+for (let i = 1; i < 13; i++){
 fetch(url)
     .then(function(response){
     return response.json();
