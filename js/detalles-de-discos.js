@@ -2,8 +2,11 @@ let qs = location.search;
 let qsol = new URLSearchParams(qs);
 let id = qsol.get('id');
 
-const url =`https://api.allorigins.win/raw?url=https://api.deezer.com/album/${id}`
+const url =`https://api.allorigins.win/raw?url=https://api.deezer.com/album/${id}`;
+const url2 = `https://api.allorigins.win/raw?url=https://api.deezer.com/album/${id}/tracks`;
 
+let contenido = "";
+let temas = document.querySelector('.temasDisco');
 
 fetch(url)
     .then(function(response){
@@ -16,7 +19,6 @@ fetch(url)
         let cantante = document.querySelector('.cantanteDisco');
         let genero = document.querySelector('.generoDisco');
         let fecha = document.querySelector('.fechaDisco');
-        let temas = document.querySelector('.temasDisco');
 
         titulo.innerHTML = data.title;
         foto.src = data.cover_xl;
@@ -27,4 +29,12 @@ fetch(url)
     })
     .catch(function(error){
         console.log("El error fue "+ error)
+    })
+
+fetch (url2)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        console.log(data);
     })
