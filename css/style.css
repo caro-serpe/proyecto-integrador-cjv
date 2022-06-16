@@ -240,6 +240,24 @@ article.songs > audio {
     justify-content: space-around;
 }
 
+.IndexCanciones{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.IndexDiscos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.IndexArtistas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 .playlist playlist-songs{
     width: 300px;
 }

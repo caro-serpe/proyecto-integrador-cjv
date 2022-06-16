@@ -4,6 +4,7 @@ let id = qsol.get('id');
 
 const url =`https://api.allorigins.win/raw?url=https://api.deezer.com/album/${id}`
 
+
 fetch(url)
     .then(function(response){
         return response.json();
