@@ -9,6 +9,7 @@ fetch(url)
         return response.json();
     })
     .then(function(data){
+        console.log(data);
         console.log(data.id);
         let titulo = document.querySelector('.tituloTema')
         let foto = document.querySelector('.tapaTema')
@@ -19,7 +20,9 @@ fetch(url)
         titulo.innerText = data.title;
         foto.src = data.album.cover_xl;
         cantante.innerText = data.artist.name;
+        cantante.href = `./detail.artist.html?id=${data.artist.id}`;
         disco.innerText = data.album.title;
+        disco.href = `./detalles-de-discos.html?id=${data.album.id}`;
         favorit.innerText
         idAGuardar=data.id
 

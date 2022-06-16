@@ -19,7 +19,8 @@ fetch(url)
 
         titulo.innerHTML = data.title;
         foto.src = data.cover_xl;
-        cantante.innerHTML = data.artist.name;
+        cantante.innerHTML = "Cantante: " + data.artist.name;
+        cantante.href = `./detail.artist.html?id=${data.artist.id}`
         fecha.innerHTML = "Fecha de publicación: " + data.release_date;
     
     })

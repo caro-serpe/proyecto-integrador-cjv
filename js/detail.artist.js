@@ -6,6 +6,8 @@ const url =`https://api.allorigins.win/raw?url=https://api.deezer.com/artist/${i
 
 const url2 = `https://api.allorigins.win/raw?url=https://api.deezer.com/artist/${id}/top?limit=5`
 
+let contenido = "";
+let album = document.querySelector('.albumcantante');
 
 fetch(url)
     .then(function(response){
@@ -29,14 +31,16 @@ fetch(url2)
         return response.json();
     })
     .then(function(datos){
+        console.log(datos.data);
+        let canciones = datos.data;
+
+
         for(let i=0; i<=4; i++) {
-            console.log(datos);
-            let canciones = datos.data;
 
-            let album = document.querySelector('.albumcantante');
-
-            album.innerHTML= `<p>${canciones[i].title}</p>`
+            contenido += `<a href="./detalle-canciones.html?id=${canciones[i].id}">${canciones[i].title}</a> <br>`
         }
+
+        album.innerHTML = contenido;
         
     })
     .catch(function(error){
