@@ -4,7 +4,7 @@ let id = qsol.get('id');
 
 const url =`https://api.allorigins.win/raw?url=https://api.deezer.com/artist/${id}`;
 
-const url2 = `https://api.allorigins.win/raw?url=https://api.deezer.com/artist/${id}/top?limit=5`
+const url2 = `https://api.allorigins.win/raw?url=https://api.deezer.com/artist/${id}/top?limit=5`;
 
 let contenido = "";
 let album = document.querySelector('.albumcantante');
