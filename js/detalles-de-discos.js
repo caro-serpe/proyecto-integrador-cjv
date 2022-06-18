@@ -2,8 +2,8 @@ let qs = location.search;
 let qsol = new URLSearchParams(qs);
 let id = qsol.get('id');
 
-const url =`https://api.allorigins.win/raw?url=https://api.deezer.com/album/${id}`;
-const url2 = `https://api.allorigins.win/raw?url=https://api.deezer.com/album/${id}/tracks`;
+const url =`https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/${id}`;
+const url2 = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/${id}/tracks`;
 
 let contenido = "";
 let temas = document.querySelector('.temasDisco');

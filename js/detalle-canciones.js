@@ -2,7 +2,7 @@ let qs = location.search;
 let qsol = new URLSearchParams(qs);
 let id = qsol.get('id');
 
-const url =`https://api.allorigins.win/raw?url=https://api.deezer.com/track/${id}`
+const url =`https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/${id}`
 let idAGuardar=id
 fetch(url)
     .then(function(response){
