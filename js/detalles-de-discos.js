@@ -25,6 +25,11 @@ fetch(url)
         cantante.innerHTML = "Cantante: " + data.artist.name;
         cantante.href = `./detail.artist.html?id=${data.artist.id}`
         fecha.innerHTML = "Fecha de publicación: " + data.release_date;
+
+        generos = data.genres;
+        for(let i=0; i<=generos.length; i++){
+            contenido += `<a href="./detalle-genero.html?id=`
+        }
     
     })
     .catch(function(error){
