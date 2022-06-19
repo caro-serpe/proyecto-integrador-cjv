@@ -1,31 +1,34 @@
 let form = document.querySelector('.form');
 let busqueda = document.querySelector('.submit-button')
 
-
-let validateSearchTerm = (searchTerm, event) => {
-    if (searchTerm === undefined){
-        alert("El campo está vacio.");
-        event.preventDefault();
+form.addEventListener('click',function() {
+    if(form === undefined){
+        alert("El campo está vacío");
+        e.preventDefault();
         return;
-    } else if(searchTerm.length < 3){
-        alert("El término buscado debe tener al menos 3 caracteres.");
-        event.preventDefault();
+    }else if(form.length < 3){
+        alert("El término buscado debe tener al menos 3 caracteres.")
+        e.preventDefault();
         return;
     }
-
-    // ya sabes que el termino a buscar esta ok
-};
-
-
-form.addEventListener('submit', function(e) {
-    const searchTerm = document.querySelector(".busqueda").value;
-    validateSearchTerm(searchTerm, e);
+});
+busqueda.addEventListener('submit', function(){
+    if(form === undefined){
+        alert("El campo está vacío");
+        e.preventDefault();
+        return;
+    }else if(form.length < 3){
+        alert("El término buscado debe tener al menos 3 caracteres.")
+        e.preventDefault();
+        return;
+    }
 });
 
-busqueda.addEventListener('click', function(e) {
-    const searchTerm = document.querySelector(".busqueda").value;
-    validateSearchTerm(searchTerm, e);
-});
+
+
+
+
+
 
 
 

@@ -1,45 +1,35 @@
+let qs = location.search;
+let qsol = new URLSearchParams(qs);
+let id = qsol.get('busqueda');
 let form = document.querySelector('.form');
 let busqueda = document.querySelector('.submit-button');
-
-let hideSpinner = () => document.querySelector(".spinner").style.display = "none";
-
-let url = "https://api.allorigins.win/raw?url=https://api.deezer.com";
-
-let queryStringObj = new URLSearchParams(window.location.search);
-
-let searchTerm = queryStringObj.get("busqueda");
-let endpoint = queryStringObj.get("endpoint");
+let proxy ="https://api.allorigins.win/raw?url="
+let endpoint = "https://api.deezer.com/search?q="
 
 
-// declaro todas las funciones para pegarle a la API
-let fetchPlaylist = (searchTerm) => {
-    fetch(url + "/playlist/" + searchTerm).then(response => response.json()).then(async response => {
-        // una vez que tengo la rta, oculto el spinner
-        // await new Promise(r => setTimeout(r, 2000));
-        hideSpinner();
-        console.log(response); 
-        const responseContainerElement = document.querySelector(".response-container");
-        // una vez que tengo la rta, lleno el contenedor con la data como yo quiera
+function hideSpinner () {return document.querySelector(".spinner").style.display = "none";}
+//hacer if  si datos.length es igual a cero hacer un innerhtml a la variable contenedor 22 con una imagen la ruta 
+// va aser un gift a un spinner y listo y en el elssee iria desde la linea 20 hasta la 30
 
-        
-    });
-};
+fetch(proxy+endpoint+id) 
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(datos){
+        //aca va ael if con el else
+        if (datos.length == 0) {
 
-let fetchSong = (searchTerm) => {
-    fetch(url + "/track/" + searchTerm).then(response => response.json()).then(response => {
-        // una vez que tengo la rta, oculto el spinner
-        hideSpinner();
-        console.log(response);
-        const responseContainerElement = document.querySelector(".response-container");
-        // una vez que tengo la rta, lleno el contenedor con la data como yo quiera
-    });
-};
+        }
+        for(let i=0; i<=4; i++){
+        console.log(datos); //ver que me imprime por consola
+        let canciones = datos.tracks.data; //cambiar lo de tracks.data
+        let contenedor = document.querySelector('.response-container');
 
-// ...
+        contenedor.innerHTML +=
+        `<article> 
+        <img src= "${canciones[i].album.cover_xl}">
+        <a href="./detalle-canciones.html?id=${canciones[i].id}"> <h4>${canciones[i].title}</h4></a>
+        <a href= "./detail.artist.html?id=${canciones[i].artist.id}"> ${canciones[i].artist.name} </a>
+        </article>`};
 
-// ejecuta el fetch adecuado
-if(endpoint === "/playlist") {
-    fetchPlaylist(searchTerm);
-} else if(endpoint === "/song") {
-    fetchSong(searchTerm);
-}
+    })
