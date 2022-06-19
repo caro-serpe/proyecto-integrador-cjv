@@ -2,13 +2,14 @@ let qs = location.search;
 let qsol = new URLSearchParams(qs);
 let id = qsol.get('id');
 
-const url =`https://api.allorigins.win/raw?url=https://api.deezer.com/track/${id}`
+const url =`https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/${id}`
 let idAGuardar=id
 fetch(url)
     .then(function(response){
         return response.json();
     })
     .then(function(data){
+        console.log(data);
         console.log(data.id);
         let titulo = document.querySelector('.tituloTema')
         let foto = document.querySelector('.tapaTema')
@@ -19,7 +20,9 @@ fetch(url)
         titulo.innerText = data.title;
         foto.src = data.album.cover_xl;
         cantante.innerText = data.artist.name;
+        cantante.href = `./detail.artist.html?id=${data.artist.id}`;
         disco.innerText = data.album.title;
+        disco.href = `./detalles-de-discos.html?id=${data.album.id}`;
         favorit.innerText
         idAGuardar=data.id
 
