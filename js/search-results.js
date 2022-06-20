@@ -3,33 +3,35 @@ let qsol = new URLSearchParams(qs);
 let id = qsol.get('busqueda');
 let form = document.querySelector('.form');
 let busqueda = document.querySelector('.submit-button');
-let proxy ="https://api.allorigins.win/raw?url="
-let endpoint = "https://api.deezer.com/search?q="
+let proxy =  "https://cors-anywhere.herokuapp.com/" //"https://api.allorigins.win/raw?url="
+let endpoint ="https://api.deezer.com/search?q="
 
 
 function hideSpinner () {return document.querySelector(".spinner").style.display = "none";}
-//hacer if  si datos.length es igual a cero hacer un innerhtml a la variable contenedor 22 con una imagen la ruta 
-// va aser un gift a un spinner y listo y en el elssee iria desde la linea 20 hasta la 30
 
 fetch(proxy+endpoint+id) 
     .then(function(response){
         return response.json();
     })
     .then(function(datos){
+        console.log("DATOS ====", datos.data)
         //aca va ael if con el else
-        if (datos.length == 0) {
-
+        if (datos.data.length == 0) {
+        
+        } else {
+            hideSpinner()
+            for(let i=0; i<datos.data.length; i++){
+                let general = datos.data[i]; //cambiar lo de tracks.data
+                let contenedor = document.querySelector('.response-container');
+         
+                contenedor.innerHTML +=
+                    `<article> 
+                        <img src= "${general.album.cover_xl}">
+                        <a href="./detalle-canciones.html?id=${general.id}"> <h4>${general.title}</h4></a>
+                        <a href="./detail.artist.html?id=${general.artist.id}"><h5>${general.artist.name}</h5></a>
+                        <a href="./detalles-de-discos.html?id=${general.album.id}"><h5>${general.album.title}</h5></a>
+                    </article>`
+        };
         }
-        for(let i=0; i<=4; i++){
-        console.log(datos); //ver que me imprime por consola
-        let canciones = datos.tracks.data; //cambiar lo de tracks.data
-        let contenedor = document.querySelector('.response-container');
-
-        contenedor.innerHTML +=
-        `<article> 
-        <img src= "${canciones[i].album.cover_xl}">
-        <a href="./detalle-canciones.html?id=${canciones[i].id}"> <h4>${canciones[i].title}</h4></a>
-        <a href= "./detail.artist.html?id=${canciones[i].artist.id}"> ${canciones[i].artist.name} </a>
-        </article>`};
 
     })
