@@ -9,7 +9,6 @@ fetch(proxy+endpoint)
         console.log(datos);
         let genero = datos.data; 
         let contenedor = documento.querySelector('.artistGenero');
-       
         for(let i=0; i<11; i++){
             contenedor.innerHTML +=
             `<article> 
