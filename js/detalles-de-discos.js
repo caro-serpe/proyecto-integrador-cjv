@@ -7,6 +7,8 @@ const url2 = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/$
 
 let contenido = "";
 let temas = document.querySelector('.temasDisco');
+let genero = document.querySelector('.generoDisco');
+let canc = "";
 
 fetch(url)
     .then(function(response){
@@ -17,7 +19,7 @@ fetch(url)
         let titulo = document.querySelector('.tituloDisco');
         let foto = document.querySelector('.tapaDisco');
         let cantante = document.querySelector('.cantanteDisco');
-        let genero = document.querySelector('.generoDisco');
+       
         let fecha = document.querySelector('.fechaDisco');
 
         titulo.innerHTML = data.title;
@@ -28,7 +30,7 @@ fetch(url)
 
         generos = data.genres;
         for(let i=0; i<=generos.length; i++){
-            contenido += `<a href="./detalle-genero.html?id=${generos.data[i].id}">${generos.data[i].name}</a>`
+            contenido += `<a href="./detalle-genero.html?id=${generos.data[i].id}">${generos.data[i].name}</a>`;
         };
 
     genero.innerHTML = contenido;
@@ -43,7 +45,10 @@ fetch (url2)
     })
     .then(function(data){
         console.log(data);
-        
+        for (let i=0; i<=data.length; i++){
+            canc += `<a href="./detalle-canciones.html?id=${data[i].id}>${data[i].name}</a>`
+        }
+        temas = canc; 
     })
     .catch(function(error){
         console.log('Error: ' + error);

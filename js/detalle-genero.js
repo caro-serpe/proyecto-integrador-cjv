@@ -6,11 +6,11 @@ fetch(proxy+endpoint)
     return response.json();
     })
     .then(function(datos){
+        console.log(datos);
+        let genero = datos.data; 
+        let contenedor = documento.querySelector('.artistGenero');
+       
         for(let i=0; i<11; i++){
-            console.log(datos);
-            let genero = datos.data; 
-            let contenedor = documento.querySelector('.artistGenero');
-
             contenedor.innerHTML +=
             `<article> 
             <img src= "${canciones[i].album.cover_xl}">
