@@ -28,9 +28,10 @@ fetch(url)
 
         generos = data.genres;
         for(let i=0; i<=generos.length; i++){
-            contenido += `<a href="./detalle-genero.html?id=`
-        }
-    
+            contenido += `<a href="./detalle-genero.html?id=${generos.data[i].id}">${generos.data[i].name}</a>`
+        };
+
+    genero.innerHTML = contenido;
     })
     .catch(function(error){
         console.log("El error fue "+ error)
@@ -42,4 +43,8 @@ fetch (url2)
     })
     .then(function(data){
         console.log(data);
+        
+    })
+    .catch(function(error){
+        console.log('Error: ' + error);
     })
