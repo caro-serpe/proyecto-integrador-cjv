@@ -1,24 +1,56 @@
-let proxy ="https://cors-anywhere.herokuapp.com/"
-let endpoint = "https://api.deezer.com/chart"
+let qs = location.search; 
+let qstoObjetoLiteral = new URLSearchParams(qs); 
+let id = qstoObjetoLiteral.get("id"); 
+let seccionCantantes = document.querySelector(".generos");
 
-fetch(proxy+endpoint)
-    .then(function(response){
+
+const url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/${id}`
+const url2 = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/${id}/artists`
+
+
+fetch(url)
+  .then(function (response) {
+    
+    return response.json(); 
+  })
+  .then(function (data) {
+    
+    console.log(data);
+
+    
+    let title = document.querySelector("h4");
+    let image = document.querySelector(".imagen");
+
+    
+
+    title.innerText = `El genero es: ${data.name}`; 
+    image.src = data.picture;
+  })
+
+  .catch(function (errores) {
+    console.log(errores);
+  });
+
+fetch(url2)
+  .then(function (response) {
     return response.json();
-    })
-    .then(function(datos){
-        console.log(datos);
-        let genero = datos.data; 
-        let contenedor = documento.querySelector('.artistGenero');
-        for(let i=0; i<11; i++){
-            contenedor.innerHTML +=
-            `<article> 
-            <img src= "${canciones[i].album.cover_xl}">
-            <a href="./detalle-canciones.html?id=${canciones[i].id}"> <h4>${canciones[i].title}</h4></a>
-            <a href= "./detail.artist.html?id=${canciones[i].artist.id}"> ${canciones[i].artist.name} </a>
-            </article>`
-        }
+  })
+  .then(function (data) {
+    let generoArtista = data.data;
+    console.log(generoArtista);
 
-    })
-    .catch(function(error){
-        console.log('El error fue ' + error)
-    })
+    for (let i = 0; i < 5; i++) {
+      
+
+      seccionGeneros.innerHTML += `<article class="Albumes"> 
+      <a href="./album.html?id=${generoArtista[i].id}">
+        <img class="imagen" src="${generoArtista[i].picture_medium}" alt="">  
+      </a>
+     <a class="url1" href="./album.html?id=${generoArtista[i].id}"> <h4>${generoArtista[i].name}</h4></a> 
+  </article>`;
+    }
+  })
+
+  .catch(function (errores) {
+    console.log(errores);
+  });
