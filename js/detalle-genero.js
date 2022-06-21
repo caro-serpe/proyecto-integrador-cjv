@@ -42,7 +42,7 @@ fetch(url2)
     for (let i = 0; i < 5; i++) {
       
 
-      seccionGeneros.innerHTML += `<article class="Albumes"> 
+      seccionCantantes.innerHTML += `<article class="Albumes"> 
       <a href="./album.html?id=${generoArtista[i].id}">
         <img class="imagen" src="${generoArtista[i].picture_medium}" alt="">  
       </a>
