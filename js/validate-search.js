@@ -1,22 +1,27 @@
 let form = document.querySelector('.form');
-let busqueda = document.querySelector('.submit-button')
+let botonBusqueda = document.querySelector('.submit-button')
+let busqueda = document.querySelector(".busqueda")
 
-form.addEventListener('click',function() {
-    if(form === undefined){
+botonBusqueda.addEventListener('click',function(e) {
+    if(busqueda.value === undefined){
         alert("El campo está vacío");
         e.preventDefault();
-    }else if(form.length < 3){
+        return;
+    }else if(busqueda.value.length < 3){
         alert("El término buscado debe tener al menos 3 caracteres.")
         e.preventDefault();
+        return;
     }
 });
-busqueda.addEventListener('submit', function(){
-    if(form === undefined){
+form.addEventListener('submit', function(e){
+    if(busqueda.value === undefined){
         alert("El campo está vacío");
         e.preventDefault();
-    }else if(form.length < 3){
+        return;
+    }else if(busqueda.value.length < 3){
         alert("El término buscado debe tener al menos 3 caracteres.")
         e.preventDefault();
+        return;
     }
 });
 

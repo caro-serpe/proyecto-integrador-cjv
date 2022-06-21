@@ -3,7 +3,7 @@ let qsol = new URLSearchParams(qs);
 let id = qsol.get('busqueda');
 let form = document.querySelector('.form');
 let busqueda = document.querySelector('.submit-button');
-let proxy =  "https://cors-anywhere.herokuapp.com/" //"https://api.allorigins.win/raw?url="
+let proxy = "https://cors-anywhere.herokuapp.com/" //"https://api.allorigins.win/raw?url="
 let endpoint ="https://api.deezer.com/search?q="
 
 
